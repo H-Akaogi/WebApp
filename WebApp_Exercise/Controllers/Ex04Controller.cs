@@ -15,6 +15,7 @@ public class Ex04Controller : Controller
     public IActionResult Calc([FromQuery] int value1, [FromQuery] int value2)
     {
         // 演習-05 型変換エラーの場合、エラーメッセージを出力する
+        // ModelStateプロパティを利用した型変換エラーチェック
         /** 追加 **/
         if (!ModelState.IsValid) // 型変換エラー?
         {
@@ -38,7 +39,12 @@ public class Ex04Controller : Controller
         var result = value1 + value2;
         return Content($"{value1} + {value2} = {result}");
     }
-
+    /// <summary>
+    /// オリジナル【文字型バージョン】
+    /// </summary>
+    /// <param name="word3"></param>
+    /// <param name="word4"></param>
+    /// <returns></returns>
     [HttpGet("Calc2")]
     public IActionResult Calc2([FromQuery] string word3, [FromQuery] string word4)
     {
