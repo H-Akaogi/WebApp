@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 /// <summary>
 /// リクエストパラメータの型変換エラー
 /// </summary>
-[Route("TypeError")]
+[Route("TypeError")]// 属性(ルーティング設定)
 public class TypeConversionErrorController : Controller
 {
     /// <summary>
@@ -10,8 +10,9 @@ public class TypeConversionErrorController : Controller
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    [HttpGet("Params")]
+    [HttpGet("Params")]/// 属性(ルーティング設定)
     public IActionResult RequestParameter(int id)
+    // IActionResultは戻り値の型(インターフェース)
     {
         // 型変換エラー?
         if (!ModelState.IsValid)

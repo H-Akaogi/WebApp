@@ -1,3 +1,4 @@
+/// 対応するControllerにusingでnamespaceを書く
 namespace WebApp_Exercise.Models;
 /// <summary>
 /// 演習-07 フォームデータを取得するコントローラを実装する

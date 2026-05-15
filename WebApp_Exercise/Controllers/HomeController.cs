@@ -7,7 +7,8 @@ using WebApp_Exercise.Models;
 
 namespace WebApp_Exercise.Controllers;
 
-public class HomeController : Controller //class Microsoft.AspNetCore.Mvc.Controllerを継承させる
+public class HomeController : Controller //  クラス名とフォルダ名(Home)を合わせる
+//class Microsoft.AspNetCore.Mvc.Controllerを継承させる
 {
     private readonly ILogger<HomeController> _logger;
 
@@ -16,14 +17,16 @@ public class HomeController : Controller //class Microsoft.AspNetCore.Mvc.Contro
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index()    // メソッド名とHomeファイル名を合わせる
+                                    // ControllerとRazor Viewのマッピング
     {
-        return View();
+        return View();// アクション名と同名のビューを探して利用する
     }
 
-    public IActionResult Privacy()
+    public IActionResult Privacy()  // メソッド名とHomeファイル名を合わせる
+                                    // ControllerとRazor Viewのマッピング
     {
-        return View();
+        return View();// アクション名と同名のビューを探して利用する
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
