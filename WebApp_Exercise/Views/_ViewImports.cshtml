@@ -1,4 +1,10 @@
-﻿@using WebApp_Exercise
+﻿<!--各Viewで毎回書かずに済むよう、共通の名前空間やタグヘルパーを定義する-->
+
+@* プロジェクトのルート名前空間をインポート *@
+@using WebApp_Exercise
+
+@* ViewModelを使うための名前空間 *@
 @using WebApp_Exercise.Models
+
+@* タグヘルパー構文（asp-forなど）を使用可能にする *@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<!--各Viewで毎回書かずに済むよう、共通の名前空間やタグヘルパーを定義する-->
