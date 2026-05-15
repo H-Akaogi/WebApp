@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 /// <summary>
 /// タグヘルパーを利用するコントローラ
 /// </summary>
@@ -11,6 +12,13 @@ public class TagHelperFormController : Controller
         // SampleFormを生成する
         var form = new SampleForm();
         // Enter.cshtmlにSampleFormを渡す
+        /*form.PrefecturesList = new List<SelectListItem>
+        {
+        new SelectListItem{ Text="--選択されていません--", Value="0" , Selected = true },
+        new SelectListItem{ Text= "北海道", Value= "1" },
+        new SelectListItem{ Text= "青森県", Value= "2" },
+        new SelectListItem{ Text= "岩手県", Value= "3" }
+        };*/
         return View(form);
     }
 

@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 public class SampleForm
 {
     /// <summary>
-    /// 氏名プロパティ
+    /// 氏名のプロパティ
     /// </summary>
     /// <value></value>
     [Display(Name = "氏名")]
     public string? Name { get; set; }
     /// <summary>
-    /// 年齢プロパティ
+    /// 年齢のプロパティ
     /// </summary>
     /// <value></value>
     [Display(Name = "年齢")]
@@ -28,12 +28,14 @@ public class SampleForm
     /// </summary>
     [Display(Name = "都道府県")]
     public int PrefecturesId { get; set; }
+
     /// <summary>
     /// プルダウン表示するリスト
     /// </summary>
     /// <value></value>
-    public List<SelectListItem> PrefecturesList { get; set; } = new List<SelectListItem>
+    public List<SelectListItem>? PrefecturesList { get; set; } /*= null; */= new List<SelectListItem>
     {
+        /// Microsoftが用意するクラス
         new SelectListItem{ Text="--選択されていません--", Value="0" , Selected = true },
         new SelectListItem{ Text= "北海道", Value= "1" },
         new SelectListItem{ Text= "青森県", Value= "2" },

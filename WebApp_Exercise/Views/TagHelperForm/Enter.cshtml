@@ -1,4 +1,5 @@
 @model SampleForm
+@*SampleFormとバインディングしている*@
 @{
     ViewData["Title"] = "HTML Formを生成するタグヘルパー";
 }
@@ -6,6 +7,9 @@
 @*
    使用するコントローラ:TagHelperFormController
    実行するアクションメソッド:Confirm()メソッド
+*@
+@*
+   FormSample(asp-controller)のResult(asp-action)にいってねの意
 *@
 <form asp-controller="FormSample" asp-action="Result" method="post">
     @Html.AntiForgeryToken() @* CSRFトークンの生成 *@
@@ -17,6 +21,7 @@
     <input asp-for="Age" class="form-control" />
     @* SampleFormのPrefecturesIdプロパティにバインドされる *@
     <label asp-for="PrefecturesId" class="form-label"></label>
+    @* SampleFormのPrefecturesListにバインドされる *@
     <select asp-for="PrefecturesId" asp-items="Model.PrefecturesList" class="form-control"></select>
     @* [送信]ボタン *@
     <br />
