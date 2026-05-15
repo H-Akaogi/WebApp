@@ -38,5 +38,11 @@ public class SampleForm
         new SelectListItem{ Text= "北海道", Value= "1" },
         new SelectListItem{ Text= "青森県", Value= "2" },
         new SelectListItem{ Text= "岩手県", Value= "3" },
+        new SelectListItem{ Text= "山形県", Value= "4" },
+        new SelectListItem{ Text= "秋田県", Value= "5" },
+        new SelectListItem{ Text= "宮城県", Value= "6" },
+        new SelectListItem{ Text= "栃木県", Value= "7" },
+        new SelectListItem{ Text= "埼玉県", Value= "8" },
+        new SelectListItem{ Text= "神奈川県", Value= "9" }
     };
 }
