@@ -53,6 +53,10 @@ TemporaryDependencyNodeTargetIdentifier=net8.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
+Applications/Domains/
+ Item.cs
+ ItemCategory.cs
+ ItemStock.cs
 Controllers/
  Ex03Controller.cs
  Ex04Controller.cs
@@ -70,6 +74,7 @@ Controllers/
  RouteSampleController.cs
  TagHelperFormController.cs
  TypeConversionErrorController.cs
+Exceptions/DomainException.cs
 Models/
  ErrorViewModel.cs
  Exercise07Form.cs
