@@ -4,6 +4,7 @@
 }
 <h2>@ViewData["Title"]</h2>
 <div class="d-flex justify-content-center">
+    @*Enterだけど受け手はCalcなのでasp-actionをCalcに変更する*@
     <form asp-controller="Exercise09" asp-action="Calc" method="post">
         @Html.AntiForgeryToken()
         <div class="mb-3">

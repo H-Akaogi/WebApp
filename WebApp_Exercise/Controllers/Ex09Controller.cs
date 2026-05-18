@@ -24,6 +24,8 @@ public class Ex09Controller : Controller
 
     /// 保存側(POST)
     [HttpPost("Calc")]//Post要求をTempDataによってGet要求に置き換える
+
+    /// フォーム送信(POST)で呼ばれ、入力値が自動的に form にバインドされる→引数あり
     public IActionResult Calc(Exercise07Form form)
     {
         // バリデーションチェック
@@ -46,6 +48,8 @@ public class Ex09Controller : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet("Result")]
+
+    /// RedirectToAction で呼ばれる。GETによるURL遷移でフォームデータは送られていない→引数なし
     public IActionResult Result()
     {
         // TempDataからERxercise07Formを取り出す
