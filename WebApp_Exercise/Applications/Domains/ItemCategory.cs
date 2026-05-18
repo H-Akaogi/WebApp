@@ -1,5 +1,5 @@
 using WebApp_Exercise.Exceptions;
-namespace WebApp_Exercise_Answer.Applications.Domains;
+namespace WebApp_Exercise.Applications.Domains;
 /// <summary>
 /// 商品カテゴリを表すドメインオブジェクト
 /// </summary>

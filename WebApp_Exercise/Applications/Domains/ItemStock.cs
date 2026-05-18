@@ -1,5 +1,5 @@
 using WebApp_Exercise.Exceptions;
-namespace WebApp_Exercise_Answer.Applications.Domains;
+namespace WebApp_Exercise.Applications.Domains;
 /// <summary>
 /// 商品在庫を表すドメインオブジェクト
 /// </summary>
@@ -34,8 +34,8 @@ public class ItemStock
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="stcok">商品在庫数</param>
-    public ItemStock(int stcok) : this(null, stcok) { }
+    /// <param name="stock">商品在庫数</param>
+    public ItemStock(int stock) : this(null, stock) { }
 
     /// <summary>
     /// 商品在庫Idのルール検証

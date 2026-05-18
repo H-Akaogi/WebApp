@@ -1,5 +1,5 @@
 using WebApp_Exercise.Exceptions;
-namespace WebApp_Exercise_Answer.Applications.Domains;
+namespace WebApp_Exercise.Applications.Domains;
 /// <summary>
 /// 商品を表すドメインオブジェクト
 /// </summary>
@@ -139,7 +139,7 @@ public class Item
 
     public override string ToString()
     {
-        var idText = Id?.ToString() ?? "未登録";
+        var idText = Id?.ToString() ?? "未登録"; // ??は<NULLの場合>の意
         var nameText = string.IsNullOrWhiteSpace(Name) ? "未登録" : Name;
         var priceText = Price?.ToString() ?? "未登録";
         var categoryText = ItemCategory?.ToString() ?? "未登録";
