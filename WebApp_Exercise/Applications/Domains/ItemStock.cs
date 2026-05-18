@@ -85,6 +85,11 @@ public class ItemStock
 
     /// <summary>
     /// 等価性の検証
+    /// 同じIdなら同じオブジェクトとして扱う
+    /// ReferenceEquals(): もともと .NET（C#）に最初から用意されている標準メソッド
+    /// GetHashCode()とセットで使う
+    /// これがないと(下記バグ)
+    /// 在庫データが重複登録される、集計が2倍になる、レポートが壊れる
     /// </summary>
     /// <param name="obj"></param>
     /// <returns></returns>
@@ -94,6 +99,12 @@ public class ItemStock
         if (obj is not ItemStock other) return false;
         return Id == other.Id;
     }
+
+    /// <summary>
+    /// このオブジェクトのハッシュ値は、Idのハッシュ値を使う。Idがnullなら0を返す
+    /// コレクションの正しい動作を保証するための設計
+    /// </summary>
+    /// <returns></returns>
     public override int GetHashCode() => Id?.GetHashCode() ?? 0;
 
     public override string ToString()
