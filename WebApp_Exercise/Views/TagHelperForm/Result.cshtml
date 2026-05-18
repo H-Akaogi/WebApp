@@ -10,8 +10,24 @@
 }
 <h2>@ViewData["Title"]</h2>
 @* 入力された値を出力 *@
+@*
+全体構造
+・d-flex → Flexbox
+・justify-content-center → 横中央配置
+・mt-5 → 上に余白（margin-top）
+*@
 <div class="d-flex justify-content-center mt-5">
+
+    @*
+    テーブル部分
+    Bootstrapの意味
+    ・table → Bootstrapの標準テーブルデザイン
+    ・table-bordered → 枠線あり
+    ・w-auto → 幅を内容に合わせる（広がりすぎ防止）
+    *@
     <table class="table table-bordered w-auto">
+
+        @*ヘッダー*@
         <thead class="table-light">
             <tr>
                 <th>項目</th>
@@ -19,15 +35,22 @@
             </tr>
         </thead>
         <tbody>
+
+            @*データ表示（Name）*@
             <tr>
+                @*DisplayNameFor:[Display(Name="～")] を反映する*@
                 <td>@Html.DisplayNameFor(m => m.Name)</td>
+                @*実際の入力値*@
                 <td>@Model.Name</td>
             </tr>
+            @*データ表示（Age）*@
             <tr>
                 <td>@Html.DisplayNameFor(m => m.Age)</td>
                 <td>@Model.Age</td>
             </tr>
+            @*データ表示（selectedPref）*@
             <tr>
+                @*PrefecturesId（数値）を「都道府県名」に変換したもの*@
                 <td>@Html.DisplayNameFor(m => m.PrefecturesId)</td>
                 <td>@selectedPref</td>
             </tr>
