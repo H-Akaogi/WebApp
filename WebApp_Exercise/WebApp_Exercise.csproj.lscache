@@ -93,6 +93,9 @@ Infrastructures/
   ItemCatgoryEntity.cs
   ItemEntity.cs
   ItemStockEntity.cs
+ Repositories/
+  ItemCategoryRepository.cs
+  ItemRepository.cs
 Models/
  ErrorViewModel.cs
  Exercise07Form.cs
