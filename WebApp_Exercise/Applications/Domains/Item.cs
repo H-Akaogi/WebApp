@@ -10,7 +10,7 @@ public class Item
     /// </summary>
     public int? Id { get; private set; }
     /// <summary>
-    /// 商品名
+    /// 商品名(初期値は空文字"")
     /// </summary>
     public string? Name { get; private set; } = string.Empty;
     /// <summary>
