@@ -39,6 +39,7 @@ public class Ex09Controller : Controller
     public IActionResult Back()
     {
         //var form = new Exercise07Form();
+        /// 演習-11 リダイレクトを利用する[リダイレクトレスポンス]
         return RedirectToAction("Enter");
     }
 }
