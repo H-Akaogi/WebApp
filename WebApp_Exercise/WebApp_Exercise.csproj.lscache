@@ -83,6 +83,10 @@ Controllers/
 Exceptions/
  DomainException.cs
  InternalException.cs
+Infrastructures/Adapters/
+ ItemCategoryEntityAdapter.cs
+ ItemEntityAdapter.cs
+ ItemStockEntityAdapter.cs
 Infrastructures/
  Context/AppDbContext.cs
  Entities/

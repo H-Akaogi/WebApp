@@ -35,13 +35,13 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // ItemとItemCategory:多対1リレーション
+        // ItemとItemCategory:多対1リレーション(カテゴリ1つに対して商品が複数)
         modelBuilder.Entity<ItemEntity>()
-            .HasOne(p => p.Category)
-            .WithMany(c => c.Items)
-            .HasForeignKey(p => p.CategoryId)
-            // 外部キーで参照されている親エンティティを削除しようとしたときに、エラーが発生して削除できない
-            .OnDelete(DeleteBehavior.Restrict);
+            .HasOne(p => p.Category) //Itemは「Categoryを1つ持つ」
+            .WithMany(c => c.Items) //Categoryは「複数のItemを持つ」
+            .HasForeignKey(p => p.CategoryId) //ategoryの主キーと紐づく
+                                              // 外部キーで参照されている親エンティティを削除しようとしたときに、エラーが発生して削除できない
+            .OnDelete(DeleteBehavior.Restrict); //Categoryを削除してもItemは削除されない
 
         // ItemとItemStock:1対1リレーション
         modelBuilder.Entity<ItemEntity>()
