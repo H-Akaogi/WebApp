@@ -38,7 +38,7 @@ public class Ex09Controller : Controller
     [HttpGet("Back")]
     public IActionResult Back()
     {
-        var form = new Exercise07Form();
-        return View("Enter", form);
+        //var form = new Exercise07Form();
+        return RedirectToAction("Enter");
     }
 }

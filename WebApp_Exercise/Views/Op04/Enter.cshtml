@@ -7,9 +7,12 @@
 @model Op03Form
 
 @*タイトル表示*@
+@*ViewData "Title" というキーに文字列を格納*@
 @{
     ViewData["Title"] = "演習option04";
 }
+
+@*さっき入れた値を取得しHTMLに表示*@
 <h2>@ViewData["Title"]</h2>
 
 
@@ -28,8 +31,12 @@
             <label asp-for="Value1" class="form-label"></label>
             @*input asp-for:プロパティの型に応じてinputのtypeが自動決定される*@
             <input asp-for="Value1" class="form-control"></label>
-            @*指定フィールドのバリデーションメッセージ出力*@
-            <span asp-valudation-for="Value1" class="text-danger"></span>
+            @*
+            指定フィールドのバリデーションメッセージ出力
+            text-danger: Bootstrapのクラス、赤文字で表示するためのスタイル
+            Value1 に対応する ModelState のエラーを自動表示する
+            *@
+            <span asp-validation-for="Value1" class="text-danger"></span>
         </div>
 
         @*値2の入力*@
@@ -38,8 +45,12 @@
             <label asp-for="Value2" class="form-label"></label>
             @*input asp-for:プロパティの型に応じてinputのtypeが自動決定される*@
             <input asp-for="Value2" class="form-control"></label>
-            @*指定フィールドのバリデーションメッセージ出力*@
-            <span asp-valudation-for="Value2" class="text-danger"></span>
+            @*
+            指定フィールドのバリデーションメッセージ出力
+            text-danger: Bootstrapのクラス、赤文字で表示するためのスタイル
+            Value2 に対応する ModelState のエラーを自動表示する
+            *@
+            <span asp-validation-for="Value2" class="text-danger"></span>
         </div>
 
         @*計算の種類の入力*@
@@ -53,6 +64,19 @@
 
         @*ボタン*@
         <div class="text-center">
+            @*
+            <button type="submit">：フォーム送信ボタン
+            ・押すと <form> の内容がサーバーへ送信される
+            ・MVCでは通常 POST アクションが呼ばれる
+
+            class="btn btn-primary"：Bootstrapのスタイル
+            ・btn → ボタンとしての基本スタイル
+            ・btn-primary → 青いメインボタン
+
+            text-center
+            ・中央揃え
+            ・この div の中身（ボタン）が横中央に配置される
+            *@
             <button type="submit" class="btn btn-primary">計算</button>
         </div>
     </form>

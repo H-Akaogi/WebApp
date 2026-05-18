@@ -13,7 +13,18 @@
 <h2>@ViewData["Title"]</h2>
 
 @*答えの表示*@
+@*
+<div class="d-flex justify-content-center">:Bootstrapのレイアウト部分
+・d-flex → Flexboxを有効化
+・justify-content-center → 横方向の中央揃え
+*@
 <div class="d-flex justify-content-center">
+    @*
+    Razor構文（データ表示）
+    @Model.Answer
+    ・Model → Controllerから渡されたデータ
+    ・Answer → そのプロパティ（Razorが @Model.Answer を実際の値に変換）
+    *@
     <h2>答え = @Model.Answer</h2>
 </div>
 
