@@ -1,0 +1,26 @@
+@*Result画面*@
+
+@*Razor Viewで名前空間をインポートする*@
+@using WebApp_Op03.Models
+
+@* Viewに渡すデータ型を宣言する*@
+@model Op03Form
+
+@*タイトル表示*@
+@{
+    ViewData["Title"] = "演習-03 HTML Formを作成するタグヘルパーを利用する";
+}
+<h2>@ViewData["Title"]</h2>
+
+@*答えの表示*@
+<div class="d-flex justify-content-center">
+    <h2>答え = @Model.Answer</h2>
+</div>
+
+@*戻るボタン*@
+<div class="d-flex justify-content-center">
+    @*Option04のControllerで、Backのactionをしたときの操作を記述*@
+    <form asp-controller="Option04" asp-action="Back" method="get">
+        <button type="submit" class="btn btn-primary">戻る</button>
+    </form>
+</div>

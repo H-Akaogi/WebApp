@@ -1,0 +1,59 @@
+@*計算画面*@
+
+@*Razor Viewで名前空間をインポートする*@
+@using WebApp_Op03.Models
+
+@* Viewに渡すデータ型を宣言する*@
+@model Op03Form
+
+@*タイトル表示*@
+@{
+    ViewData["Title"] = "演習option04";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+<div class="d-flex justify-content-center">
+    @*asp-controllerの値はControllerの[Route]と揃える*@
+    @*asp-actionの値はControllerの[HttpGet/Post]と揃える*@
+    <form asp-controller="Option04" asp-action="Result" method="post">
+
+        @*HTMLヘルパーメソッド*@
+        @*フォーム送信時にCSRFトークン(@Html.AntiForgeryToken) を自動挿入*@
+        @Html.AntiForgeryToken()
+
+        @*値1の入力*@
+        <div class="mb-3">
+            @*label asp-for：対応する入力項目のラベルを自動生成*@
+            <label asp-for="Value1" class="form-label"></label>
+            @*input asp-for:プロパティの型に応じてinputのtypeが自動決定される*@
+            <input asp-for="Value1" class="form-control"></label>
+            @*指定フィールドのバリデーションメッセージ出力*@
+            <span asp-valudation-for="Value1" class="text-danger"></span>
+        </div>
+
+        @*値2の入力*@
+        <div class="mb-3">
+            @*label asp-for：対応する入力項目のラベルを自動生成*@
+            <label asp-for="Value2" class="form-label"></label>
+            @*input asp-for:プロパティの型に応じてinputのtypeが自動決定される*@
+            <input asp-for="Value2" class="form-control"></label>
+            @*指定フィールドのバリデーションメッセージ出力*@
+            <span asp-valudation-for="Value2" class="text-danger"></span>
+        </div>
+
+        @*計算の種類の入力*@
+        <div class="mb-3">
+            @* SampleFormのAgeプロパティにバインドされる *@
+            @*label asp-for：対応する入力項目のラベルを自動生成*@
+            <label asp-for="Opt" class="form-label"></label>
+            @*input asp-for:プロパティの型に応じてinputのtypeが自動決定される*@
+            <input asp-for="Opt" class="form-control" />
+        </div>
+
+        @*ボタン*@
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">計算</button>
+        </div>
+    </form>
+</div>

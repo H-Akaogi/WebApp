@@ -14,6 +14,7 @@
 <form asp-controller="FormSample" asp-action="Result" method="post">
     @Html.AntiForgeryToken() @* CSRFトークンの生成 *@
     @* SampleFormのNameプロパティにバインドされる *@
+    @* inputの名前と連動(Displayで表示)*@
     <label asp-for="Name" class="form-label"></label>
     <input asp-for="Name" class="form-control" />
     @* SampleFormのAgeプロパティにバインドされる *@
@@ -22,6 +23,8 @@
     @* SampleFormのPrefecturesIdプロパティにバインドされる *@
     <label asp-for="PrefecturesId" class="form-label"></label>
     @* SampleFormのPrefecturesListにバインドされる *@
+    @* <select>要素生成タグヘルパー, 選択できる*@
+    @* Model.:ViewModelのインスタンス *@
     <select asp-for="PrefecturesId" asp-items="Model.PrefecturesList" class="form-control"></select>
     @* [送信]ボタン *@
     <br />

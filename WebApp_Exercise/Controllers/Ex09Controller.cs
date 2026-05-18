@@ -15,7 +15,6 @@ public class Ex09Controller : Controller
         var form = new Exercise07Form();
         return View(form);
     }
-
     /// <summary>
     /// [計算]ボタンクリックアクション
     /// </summary>
@@ -23,6 +22,11 @@ public class Ex09Controller : Controller
     [HttpPost("Result")]
     public IActionResult Result(Exercise07Form form)
     {
+        // バリデーションチェック
+        if (!ModelState.IsValid)
+        {
+            return View("Enter", form);
+        }
         form.Answer = form.Value1 + form.Value2;
         return View(form);
     }
