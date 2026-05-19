@@ -1,12 +1,18 @@
+///演習-25 DIコンテナを利用して、依存関係を構築する
+
+using WebApp_Exercise.Presentations.Extensions;
 // WebApplicationBuilderのビルダーを作成し、コマンドライン引数を渡す
 var builder = WebApplication.CreateBuilder(args);
 
 // DIコンテナにMVCコントローラとビューをサポートするサービスを追加する
 builder.Services.AddControllersWithViews();
-
+// 依存定義および依存性注入
+builder.Services.SettingDependencyInjection(builder.Configuration);
 // WbApplicationをビルダーから構築する
 var app = builder.Build();
 
+/// ここまで
+/// 
 // HTTPリクエストパイプラインの構成を行う
 if (!app.Environment.IsDevelopment())
 {
@@ -33,8 +39,8 @@ app.UseAuthorization();
 // 既定のルートパターンを設定する（例: /Home/Index）
 app.MapControllerRoute(
     name: "default",                            // ルートの名前
-    // URLパターン（省略時はHomeコントローラとIndexアクション）
-    pattern: "{controller=Home}/{action=Index}/{id?}"); 
+                                                // URLパターン（省略時はHomeコントローラとIndexアクション）
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 // アプリケーションを起動し、リクエストの受付を開始する
 app.Run();
