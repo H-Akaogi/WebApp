@@ -1,5 +1,6 @@
 /// リスト7-1 ドメインオブジェクト
-
+/// データの意味と振る舞いを定義する
+/// 
 using WebApp_Sample.Exceptions;
 namespace WebApp_Sample.Applications.Domains;
 /// <summary>

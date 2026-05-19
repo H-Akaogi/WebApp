@@ -1,4 +1,8 @@
 /// リスト8-2 DbContext継承クラス
+/// データベース接続およびセッション管理
+/// エンティティの変更追跡（Change Tracking）
+/// クエリ実行および結果のマッピング
+/// SaveChangesによる永続化処理の統括
 
 using Microsoft.EntityFrameworkCore;
 using WebApp_Sample.Infrastructures.Entities;

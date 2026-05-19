@@ -1,4 +1,7 @@
 /// リスト8-1 Entityクラス
+/// ドメイン上のデータ構造を表すクラス
+/// データベースのテーブルの1行に対応するオブジェクト
+/// 状態（プロパティ）を保持する
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

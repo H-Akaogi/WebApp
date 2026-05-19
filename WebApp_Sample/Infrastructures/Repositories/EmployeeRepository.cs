@@ -1,5 +1,10 @@
 /// リスト8-4 Repositoryインターフェイスの実装
-
+/// データを見に行く(取得)
+/// データアクセス処理の抽象化
+/// DbContextやORMへの直接依存を隠蔽
+/// 永続化ロジック（CRUD操作）を集約
+/// ドメイン層とデータアクセス層の分離
+/// 
 using WebApp_Sample.Infrastructures.Context;
 using WebApp_Sample.Applications.Domains;
 using WebApp_Sample.Applications.Repositories;

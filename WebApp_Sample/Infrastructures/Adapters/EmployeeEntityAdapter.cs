@@ -1,5 +1,8 @@
 /// リスト8-3 Adapterインターフェイスの実装
-
+/// (1) ドメインオブジェクト→Entity
+/// (2) Entity→ドメインオブジェクト
+/// Repository⇔Entity間の変換操作
+/// 
 using WebApp_Sample.Applications.Adapters;
 using WebApp_Sample.Applications.Domains;
 using WebApp_Sample.Infrastructures.Entities;
