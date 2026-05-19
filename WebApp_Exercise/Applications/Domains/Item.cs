@@ -112,7 +112,7 @@ public class Item
     /// <summary>
     /// 商品カテゴリの変更
     /// </summary>
-    public void ChangeProductCategory(ItemCategory? itemCategory)
+    public void ChangeItemCategory(ItemCategory? itemCategory)
     {
         ItemCategory = itemCategory;
     }
