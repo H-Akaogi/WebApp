@@ -1,10 +1,26 @@
+/// リスト10-7 DIコンテナ
+
+using WebApp_Sample.Presentations.Extensions;
+
+var builder = WebApplication.CreateBuilder(args);
+// ControllerやViewの依存関係を構築する
+builder.Services.AddControllersWithViews();
+
+// アプリケーションの依存関係を構築する
+builder.Services.SettingDependencyInjection(builder.Configuration);
+
+var app = builder.Build();
+
+
+/// 
+/*
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
+*/
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
