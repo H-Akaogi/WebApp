@@ -20,6 +20,7 @@ public class TempDataStore<T> where T : class
     /// コンストラクタ
     /// </summary>
     /// <param name="key">オブジェクトにアクセスするキー</param>
+    /// TempDataに保存・取得する際のキーを受け取って保持
     public TempDataStore(string key)
     {
         _key = key;
