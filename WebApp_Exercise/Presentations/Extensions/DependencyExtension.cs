@@ -1,4 +1,6 @@
 /// 演習-25 DIコンテナを利用して、依存関係を構築する
+/// 依存関係の登録：プログラムが使用する部品（コンポーネント）の型や仕様をコンテナに登録します。
+/// 依存関係の解決：実行時にコンテナが必要な部品のインスタンスを生成し、適切な場所に注入します。
 
 using Microsoft.EntityFrameworkCore;
 using WebApp_Exercise.Applications.Repositories;
