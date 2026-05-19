@@ -1,4 +1,5 @@
 /// 演習-20 Serviceインターフェイスと実装クラスを作成する
+///  カテゴリ一覧の取得・同一商品の存在確認・商品と在庫の登録・共通例外
 
 using WebApp_Exercise.Applications.Domains;
 using WebApp_Exercise.Applications.Repositories;
