@@ -2,6 +2,7 @@
 
 using WebApp_Sample.Presentations.Extensions;
 
+using WebApp_Sample.Presentations.Middlewares;
 var builder = WebApplication.CreateBuilder(args);
 // ControllerやViewの依存関係を構築する
 builder.Services.AddControllersWithViews();
@@ -11,6 +12,11 @@ builder.Services.SettingDependencyInjection(builder.Configuration);
 
 var app = builder.Build();
 
+
+/// リスト10-8 InternalException(内部エラー)を処理するMiddleware
+
+// IngternalExceptionをハンドリングするミドルウェアを有効にする
+app.UseMiddleware<InternalExceptionLoggingMiddleware>();
 
 /// 
 /*
