@@ -1,6 +1,7 @@
 ///演習-25 DIコンテナを利用して、依存関係を構築する
 
 using WebApp_Exercise.Presentations.Extensions;
+using WebApp_Exercise.Presentations.Middlewares;
 // WebApplicationBuilderのビルダーを作成し、コマンドライン引数を渡す
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,9 @@ builder.Services.SettingDependencyInjection(builder.Configuration);
 // WbApplicationをビルダーから構築する
 var app = builder.Build();
 
-/// ここまで
+/// 演習-27 Middlewareを実装し、動作を確認する
+// IngternalExceptionをハンドリングするミドルウェアを有効化する
+app.UseMiddleware<InternalExceptionLoggingMiddleware>();
 /// 
 // HTTPリクエストパイプラインの構成を行う
 if (!app.Environment.IsDevelopment())
